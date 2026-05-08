@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#222;
+      line-height:1.7;
+    }
+
+    /* ================= NAVBAR ================= */
+    nav{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      padding:25px 80px;
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      z-index:10;
+    }
+
+    nav ul{
+      display:flex;
+      gap:35px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-size:14px;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav ul li a::after{
+      content:'';
+      position:absolute;
+      width:0%;
+      height:2px;
+      background:white;
+      left:0;
+      bottom:-5px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover::after{
+      width:100%;
+    }
+
+    /* ================= HERO ================= */
+    .hero{
+      height:70vh;
+      background:
+        linear-gradient(rgba(10,20,30,0.7), rgba(10,20,30,0.7)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:left;
+      padding:40px;
+      color:white;
+      position:relative;
+    }
+
+    .hero-content{
+      max-width:700px;
+      backdrop-filter:blur(5px);
+      background:rgba(255,255,255,0.05);
+      padding:40px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero h1{
+      font-size:52px;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .hero p{
+      font-size:17px;
+      color:#ddd;
+      margin-bottom:20px;
+    }
+
+    .hero-info{
+      margin-top:20px;
+    }
+
+    .hero-info p{
+      margin:8px 0;
+      color:#fff;
+      font-size:15px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:25px;
+      padding:12px 28px;
+      background:white;
+      color:#111;
+      text-decoration:none;
+      border-radius:30px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#d6d6d6;
+      transform:translateY(-3px);
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    .container{
+      width:80%;
+      margin:auto;
+      padding:70px 0;
+    }
+
+    .section{
+      background:white;
+      padding:40px;
+      border-radius:18px;
+      margin-bottom:40px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.05);
+      transition:0.3s;
+    }
+
+    .section:hover{
+      transform:translateY(-5px);
+    }
+
+    .section h2{
+      margin-bottom:15px;
+      color:#1f2937;
+      font-size:28px;
+    }
+
+    .section p{
+      color:#555;
+      font-size:16px;
+    }
+
+    hr{
+      margin:30px 0;
+      border:none;
+      border-top:1px solid #ddd;
+    }
+
+    /* ================= CARDS ================= */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:25px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:#f9fafb;
+      padding:25px;
+      border-radius:15px;
+      transition:0.3s;
+      border:1px solid #eee;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#111827;
+    }
+
+    .card p{
+      font-size:14px;
+      color:#666;
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+      background:#111827;
+      color:#ccc;
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:768px){
+
+      nav{
+        padding:20px;
+        justify-content:center;
+      }
+
+      nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+      }
+
+      .hero{
+        height:auto;
+        padding:120px 20px 80px;
+      }
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .container{
+        width:92%;
+      }
+
+      .hero-content{
+        padding:30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Assessments</a></li>
+      <li><a href="#">Laboratory Works</a></li>
+      <li><a href="#">Experience</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Student Portfolio</h1>
+      <p>
+        A collection of my academic activities, laboratory works,
+        projects, and learning experiences throughout the semester.
+      </p>
+
+      <div class="hero-info">
+        <p><strong>Course Code:</strong> IT-204</p>
+        <p><strong>Course Title:</strong> Networking 2</p>
+        <p><strong>Semester:</strong> 2nd Semester SY 2025-2026</p>
+        <p><strong>Name:</strong> Your Name Here</p>
+      </div>
+
+      <a href="#" class="btn">Explore Portfolio</a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <section class="section">
+      <h2>About This Portfolio</h2>
+      <p>
+        This portfolio showcases my projects, hands-on activities,
+        laboratory exercises, and personal reflections throughout the semester.
+        It demonstrates my growth, technical skills, creativity,
+        and learning journey in the course.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>End Semester Self-Assessment</h2>
+
+      <p>
+        This semester helped me improve my technical knowledge,
+        problem-solving skills, and teamwork. I learned how to manage
+        projects better, practice coding consistently, and understand
+        networking concepts more deeply.
+      </p>
+
+      <hr>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Skills Learned</h3>
+          <p>
+            HTML, CSS, networking fundamentals, routing,
+            troubleshooting, and database concepts.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Challenges</h3>
+          <p>
+            Time management, debugging errors, and balancing
+            multiple projects during deadlines.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Achievements</h3>
+          <p>
+            Successfully completed laboratory activities and
+            improved confidence in programming and networking.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Student Portfolio | Designed with HTML & CSS
+  </footer>
+
+</body>
+</html>
